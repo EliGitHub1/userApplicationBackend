@@ -1,10 +1,13 @@
 const express = require("express");
+const users = require("./routes/api/users");
 
 const app = express();
 
 app.get("/", (req, res) =>
-  res.send("Hello World! I am Eli writing in Node.js for the first time")
+  res.send("Hello World! I am Eli writing in Node.js for the first time!")
 );
+
+app.use("/api/users", users);
 
 const port = 5000;
 
