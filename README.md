@@ -12,4 +12,4 @@ To run your application locally:
 
 npm run start
 
-Your application will be running at http://localhost:3000. You can access the /health endpoint at the host.
+Your application will be running at http://localhost:3001. You can access the /health endpoint at the host.
