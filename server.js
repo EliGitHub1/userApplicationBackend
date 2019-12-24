@@ -1,14 +1,19 @@
-const express = require("express");
-const users = require("./routes/api/users");
+const express = require('express');
+
+const listOfUsers = require('./resources/usersList')
+const nextId = require('./resources/nextId')
+
+console.log(listOfUsers);
+console.log(nextId);
 
 const app = express();
 
-app.get("/", (req, res) =>
-  res.send("Hello World! I am Eli writing in Node.js for the first time!")
-);
+const userController = require('./routes/userController');
 
-app.use("/api/users", users);
+app.use('/users',userController);
 
-const port = 5000;
+app.use('/',(req,res,next)=>{
+  res.status(404).send('<h1>page not found</h1>');
+})
 
-app.listen(port, () => console.log(`Server running on port ${port}`));
+app.listen(3000);
