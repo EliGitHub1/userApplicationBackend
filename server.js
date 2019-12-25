@@ -1,20 +1,18 @@
 const express = require('express');
-
-const userController = require('./routes/userController');
-
-const listOfUsers = require('./resources/usersList')
-const nextId = require('./resources/nextId')
-
-console.log(listOfUsers);
-console.log(nextId);
+const bodyParser = require('body-parser');
 
 const app = express();
 
+const userRoutes = require('./routes/user');
 
-app.use('/users',userController);
+app.set('view engine', 'pug')
 
-// app.use((req,res,next)=>{
-//   res.status(404).send('<h1>page not found</h1>');
-// })
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use('/users',userRoutes);
+
+app.use((req,res,next)=>{
+  // res.status(404).render('404',{pageTitle:'Page Not Found'} );
+})
 
 app.listen(3001);
