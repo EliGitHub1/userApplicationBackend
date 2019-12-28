@@ -48,3 +48,21 @@ exports.deleteUser=(req, res, next) => {
     })
   }
 }
+
+exports.updateUser=(req, res, next) => {
+  var index = userList.userList.findIndex(x => x.id == req.query.id);
+  if (index > -1) {
+    userList.userList[index] = 
+    {   
+        id: req.query.id,
+        name:req.query.newData
+    }                
+res.json({
+      message:"User was updated"
+    })}else{
+      res.status(200);
+      res.json({
+      error:"User wasn't found"
+    })
+  }
+}
