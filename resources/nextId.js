@@ -1,1 +1,3 @@
-module.exports.nextId = 5;
+let nextId = 116;
+
+module.exports.nextId;
