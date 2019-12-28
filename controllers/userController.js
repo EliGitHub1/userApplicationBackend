@@ -32,3 +32,19 @@ exports.postAddUser=(req, res, next) => {
     })
   }
 }
+
+
+exports.deleteUser=(req, res, next) => {
+
+  var index = userList.userList.findIndex(x => x.id == req.query.id);
+  if (index > -1) {
+    userList.userList.splice(index, 1);
+    res.json({
+      message:"User was deleted"
+    })}else{
+      res.status(200);
+      res.json({
+      error:"User wasn't found"
+    })
+  }
+}
