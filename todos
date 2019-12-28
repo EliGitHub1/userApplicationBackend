@@ -3,22 +3,12 @@ Todo's:
 Backend:
 ________
 
-
-validate params on GET
-Hadnle errors cases of each controller
-
-Delete
-Update
-Add
-
+Error handling 
 Create uuid generator to list of users
 
 Client:
 ________
 
 Add redux to handle all calls to server
-Delete
-Update
-Add
-
-componentdidupdate to bring again
+Add regex to verify on client side
+use componentdidupdate to fetch data
