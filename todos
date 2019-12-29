@@ -9,6 +9,5 @@ Create uuid generator to list of users
 Client:
 ________
 
-Add redux to handle all calls to server
 Add regex to verify on client side
 use componentdidupdate to fetch data
