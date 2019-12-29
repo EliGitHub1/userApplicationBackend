@@ -14,8 +14,6 @@ app.use(cors())
 
 const userRoutes = require('./routes/user');
 
-app.set('view engine', 'pug')
-
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/users',cors(corsOptions),userRoutes);
